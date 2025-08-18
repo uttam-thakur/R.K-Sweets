@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { CartButton } from './cart/CartButton';
+import { Menu } from "lucide-react";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,13 @@ export const Navbar = () => {
         </nav>
         <div className="flex items-center gap-3">
           <CartButton />
-          <button onClick={() => setOpen(!open)} className="md:hidden border rounded-xl px-3 py-1">Menu</button>
+          <button 
+  onClick={() => setOpen(!open)} 
+  className="md:hidden  px-3 py-1 flex items-center justify-center"
+>
+  <Menu size={24} />  {/* 3-line burger icon */}
+</button>
+          {/* <button onClick={() => setOpen(!open)} className="md:hidden border rounded-xl px-3 py-1">Menu</button> */}
         </div>
       </div>
 
