@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const CartDrawer = () => {
   const { items, setOpen, open, inc, dec, removeItem, clear } = useCart();
   const total = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+console.log("--->",items);
 
   return (
     <AnimatePresence>
@@ -29,11 +30,15 @@ export const CartDrawer = () => {
               <h3 className="font-semibold text-lg">Your Cart</h3>
               <button onClick={() => setOpen(false)} className="text-sm text-gray-500">Close</button>
             </div>
-            <div className="flex-1 overflow-auto space-y-3">
+            <div className="flex-1 overflow space-y-3 bg-gray-100 ">
               {items.length === 0 && <p className="text-sm text-gray-500">Your cart is empty.</p>}
-              {items.map(i => (
-                <div key={i.id} className="border rounded-xl p-3">
-                  <div className="font-medium">{i.name}</div>
+              {items.map(i =>{ 
+                 console.log("Cart Item:", i); 
+             
+             return (
+                
+                <div key={i.id} className="border rounded-xl p-3 ">
+                  <div className="font-medium ">{i.name}</div>
                   <div className="text-sm text-gray-500">₹{i.price}</div>
                   <div className="flex items-center gap-2 mt-2">
                     <button className="border rounded-lg px-2" onClick={() => dec(i.id)}>-</button>
@@ -42,13 +47,17 @@ export const CartDrawer = () => {
                     <button className="ml-auto text-red-600 text-sm" onClick={() => removeItem(i.id)}>Remove</button>
                   </div>
                 </div>
-              ))}
+              
+
+              )})}
+
+
             </div>
-            <div className="mt-3 border-t pt-3">
-              <div className="flex items-center justify-between font-semibold">
-                <span>Total</span><span>₹{total}</span>
+            <div className="mt-3 border-t pt-3 bg-gray-100  p-3 ">
+              <div className="flex items-center justify-between font-semibold ">
+                <span >Total</span><span>₹{total}</span>
               </div>
-              <button className="btn btn-primary w-full mt-3" onClick={() => { clear(); alert('Checkout demo complete!'); }}>Checkout</button>
+              <button className="btn btn-primary w-full mt-3" onClick={() => { clear(); setOpen(false); alert('Checkout demo complete!'); }}>Checkout</button>
             </div>
           </motion.aside>
         </>
