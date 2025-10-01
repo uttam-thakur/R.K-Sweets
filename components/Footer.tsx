@@ -9,9 +9,9 @@ export const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Contact</h4>
           <ul className="text-sm text-gray-600 space-y-1">
-            <li>MG Road, Railpar</li>
-            <li>+91-98765-43210</li>
-            <li>hello@rksweets.in</li>
+            <li>Mahua dangal, Railpar</li>
+            <li>+91-7384538258</li>
+            <li>rksweets1973@gmail.com</li>
           </ul>
         </div>
         <div>

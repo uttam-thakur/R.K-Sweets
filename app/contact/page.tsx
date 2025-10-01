@@ -64,14 +64,14 @@ export default function ContactPage() {
         <div className="space-y-4">
           <div className="card p-6">
             <h2 className="text-xl font-semibold mb-2">Our Address</h2>
-            <p className="text-gray-600">Sweet Haven, MG Road, Bengaluru, India</p>
+            <p className="text-gray-600">RK Sweets, Mahua Dangal, Railpar, India</p>
             <p className="text-gray-600">Open: 9:00 AM – 9:00 PM (Mon–Sun)</p>
-            <p className="text-gray-600">Phone: +91-98765-43210</p>
+            <p className="text-gray-600">Phone: +91-7384538258</p>
           </div>
           <div className="overflow-hidden rounded-2xl shadow-soft border border-gray-100">
             <iframe
               title="Sweet Haven Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.032828692889!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjciTiA3N8KwMzUnNDEuNiJF!5e0!3m2!1sen!2sin!4v1616588031234!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.3831327395606!2d86.96389621100921!3d23.698008390696728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f71f580feb4f05%3A0x581836544193cb2f!2sR.k%20Sweets!5e0!3m2!1sen!2sin!4v1759311321140!5m2!1sen!2sin"
               width="100%"
               height="300"
               style={{ border: 0 }}
