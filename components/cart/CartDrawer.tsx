@@ -57,7 +57,33 @@ console.log("--->",items);
               <div className="flex items-center justify-between font-semibold ">
                 <span >Total</span><span>₹{total}</span>
               </div>
-              <button className="btn btn-primary w-full mt-3" onClick={() => { clear(); setOpen(false); alert('Checkout demo complete!'); }}>Checkout</button>
+              {/* <button className="btn btn-primary w-full mt-3" onClick={() => { clear(); setOpen(false); alert('Checkout demo complete!'); }}>Checkout</button> */}
+
+              <button
+  className="btn btn-primary w-full mt-3"
+  onClick={() => {
+    const orderDetails = items
+      .map(
+        (i) => `${i.name} (x${i.qty}) - ₹${i.price * i.qty}`
+      )
+      .join("\n");
+
+    const message = `🛒 *New Order from RK Sweets* \n\n${orderDetails}\n\nTotal: ₹${total}\n\nPlease confirm my order.`;
+
+    const phone = "918670288140"; // Replace with your WhatsApp number (with country code, no +)
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    // Clear cart and close drawer
+    clear();
+    setOpen(false);
+
+    // Open WhatsApp
+    window.open(url, "_blank");
+  }}
+>
+  Checkout
+</button>
+
             </div>
           </motion.aside>
         </>
